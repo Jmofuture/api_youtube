@@ -62,7 +62,23 @@ video_df = get_video_details(youtube, video_ids)
 # Comprobación de valores nulos
 video_df.isnull().any()
 
+# Mostrar los primeros registros
+video_df.head()
+
+Resultados
+A continuación se muestra una descripción general de los datos recopilados:
+
+python
+
+
 # Conversión de tipos de datos
 numeric_cols = ['viewCount', 'likeCount', 'favouriteCount', 'commentCount']
 video_df[numeric_cols] = video_df[numeric_cols].apply(pd.to_numeric, errors = 'coerce', axis = 1)
+
+Importante: Asegúrate de reemplazar tu_api_key con tu propia clave de API de YouTube.
+
+Notas adicionales
+Asegúrate de tener las bibliotecas necesarias instaladas en tu entorno de Python antes de ejecutar este código.
+Asegúrate de que tu clave de API de YouTube tenga los permisos adecuados para acceder a la información que estás solicitando.
+
 
